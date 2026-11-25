@@ -1,0 +1,39 @@
+:root{--ink:#14281d;--leaf:#2f6b3f;--deep:#1b3d2a;--paddy:#7fa650;--mist:#eef3e4;--sun:#e0a526;--bad:#b3402a;--card:#fff}
+@media(prefers-color-scheme:dark){:root{--ink:#e8efdc;--mist:#101d15;--card:#18291e;--deep:#0d1a12}}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Noto Sans','Noto Sans Tamil','Noto Sans Devanagari','Noto Sans Malayalam','Noto Sans Telugu',sans-serif;background:var(--mist);color:var(--ink);line-height:1.6}
+header{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;align-items:center;justify-content:space-between;padding:.7rem 1.2rem;background:var(--deep)}
+header a{color:#eef3e4;text-decoration:none;font-weight:600}.logo{font-size:1.2rem;font-weight:800}
+nav{display:flex;flex-wrap:wrap;gap:1rem;font-size:.95rem}
+.page{display:none;max-width:860px;margin:0 auto;padding:1.5rem 1.2rem 4rem}.page.on{display:block}
+.hero{background:var(--deep);color:#eef3e4;border-radius:28px;padding:3rem 2rem 6rem;position:relative;overflow:hidden}
+.hero h1{font-size:clamp(1.9rem,6vw,3.2rem);line-height:1.15;margin:0 0 1rem}.hero p{max-width:34em;font-size:1.1rem}
+.rows{position:absolute;left:0;bottom:0;width:100%;height:110px}
+.btn{background:var(--sun);color:#1a1a1a;border:0;border-radius:14px;padding:.7rem 1.3rem;font:inherit;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.big{padding:1rem 2rem;font-size:1.15rem;margin-top:.5rem}
+.ghost{background:transparent;border:2px solid var(--leaf);color:var(--ink);border-radius:12px;padding:.4rem .9rem;font:inherit;cursor:pointer}
+.ghost:disabled{opacity:.4;cursor:default}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.bar{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:1rem}
+select,input{font:inherit;padding:.6rem .8rem;border-radius:12px;border:2px solid var(--paddy);background:var(--card);color:var(--ink);max-width:100%}
+.chat{background:var(--card);border-radius:20px;padding:1rem;min-height:220px;max-height:46vh;overflow:auto;display:flex;flex-direction:column;gap:.6rem}
+.empty,.hint{opacity:.7}.msg{padding:.6rem .9rem;border-radius:16px;max-width:85%}
+.msg.user{align-self:flex-end;background:var(--leaf);color:#fff}.msg.ai{align-self:flex-start;background:var(--mist)}
+.notice{background:#fff3cd;color:#4a3a00;border-radius:12px;padding:.7rem 1rem;margin-bottom:1rem}.notice.err{background:#f8d7d0;color:#5a1a0d}
+.micwrap{display:flex;flex-direction:column;align-items:center;gap:.5rem;margin:1.5rem 0}
+.mic{width:120px;height:120px;border-radius:50%;border:0;font-size:3rem;cursor:pointer;background:var(--leaf);color:#fff;box-shadow:0 0 0 10px rgba(127,166,80,.3);transition:.2s}
+.mic.on{background:var(--bad);animation:pulse 1.2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 24px rgba(179,64,42,.15)}}
+.wave{display:flex;gap:5px;height:34px;align-items:center}.wave i{width:6px;height:6px;background:var(--paddy);border-radius:3px}
+.wave.on i{animation:w .8s infinite ease-in-out}.wave.on i:nth-child(2n){animation-delay:.2s}.wave.on i:nth-child(3n){animation-delay:.4s}
+@keyframes w{50%{height:32px}}
+.status{font-weight:600}.live{min-height:1.5rem;font-style:italic;opacity:.8;text-align:center}
+.textform{display:flex;gap:.5rem}.textform input{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin:1rem 0}
+.card,.tile{background:var(--card);border-radius:18px;padding:1rem 1.2rem}
+.tile b{font-size:2rem;display:block}.tile .meter{height:8px;border-radius:4px;background:var(--mist);margin-top:.5rem}.tile .meter i{display:block;height:100%;border-radius:4px;background:var(--paddy)}
+.pill{padding:.3rem .8rem;border-radius:99px;background:var(--card);font-weight:600}.pill.ok{background:#cfe8c3;color:#14401f}.pill.warn{background:#fff3cd;color:#4a3a00}.pill.bad{background:#f8d7d0;color:#5a1a0d}
+canvas{width:100%;background:var(--card);border-radius:18px}
+.form{display:grid;gap:.8rem}.form label{display:grid;gap:.2rem;font-weight:600}.result{font-size:1.2rem;font-weight:700}
+#hlist .card{margin:.6rem 0}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
